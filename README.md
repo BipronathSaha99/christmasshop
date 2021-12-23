@@ -12,9 +12,8 @@ Christmas Shop Website is an e-shop for buying and selling necessary goods for H
 This website template is freely hosted in netlify
 
 ```bash
-    https://christamasshop.netlify.app/
+    https://christmasshop.netlify.app/#wishlist
 ```
-
 
 ## Authors
 
