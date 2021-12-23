@@ -1,0 +1,825 @@
+/*==========================================================================
+                        Google Font link
+===========================================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,700&display=swap');
+
+/*=============================================================================
+                        Common styling
+==============================================================================*/
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+:root{
+    --red: #e60000;
+    --black:#222;
+    --white:#fff;
+    --light:#eee;
+    --gray:#666;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--red);
+}
+
+a{
+    text-decoration: none;
+}
+
+section{
+    padding: 3rem 9%;
+}
+
+.btn{
+    font-size: 1.7rem;
+    text-transform: capitalize;
+    color: var(--white);
+    background: var(--red);
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 10%);
+}
+
+.btn:hover{
+    letter-spacing: 0.1rem;
+    transition: .4s;
+    color: var(--white);
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+        transform: translateY(-4rem) scale(0.4);
+    }
+}
+
+/*==========================================================================
+                        Header section starts 
+============================================================================*/
+
+#header{
+    position: sticky;
+    display: flex;
+    top: 0; right: 0; left: 0;
+    z-index: 1000;
+    background-color: var(--white);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 9%;
+}
+
+#header .logo{
+    font-size: 2.5rem;
+    color: var(--black);
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+
+.logo i{
+    color: var(--red);
+}
+
+.logo:hover{
+    text-decoration: none;
+}
+
+#header .navbar ul{
+    list-style-type: none;
+}
+
+#header .navbar ul li{
+    display: block;
+    float: left;
+}
+
+#header .navbar a{
+    margin: 0 1.5rem;
+    font-size: 1.7rem;
+    color: var(--black);
+    text-transform: capitalize;
+}
+
+#header .navbar a:hover{
+    text-decoration: none;
+    color: var(--red);
+}
+
+#header .icons div,
+#header .icons a 
+{   
+    width: 4.5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 0.5rem;
+    background: var(--light);
+    color: var(--black);
+    margin-left: 0.3rem;
+    font-size: 1.7rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+#header .icons div:hover,
+#header .icons a:hover{
+    text-decoration: none;
+    color: var(--white);
+    background: var(--red);
+}
+
+#header .icons div#menu-btn{
+    display: none;
+}
+
+#header .search-form{
+    position: absolute;
+    top: 99%;
+    right: 0; left: 0;
+    height: 6rem;
+    background: var(--white);
+    border-top:0.2rem solid #222;
+    border-bottom: 0.2rem solid #222;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+#header .search-form.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+#header .search-form input{
+    font-size: 1.6rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    color: var(--gray);
+    text-transform: none;
+}
+
+#header .search-form label{
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    color: var(--black);
+}
+
+#header .search-form label:hover{
+    color: var(--red);
+}
+
+/*=============================================================================
+                        Home Slide Section Satrts 
+===============================================================================*/
+
+.home{
+    padding: 0;
+    position: relative;
+}
+
+.home .slide {
+    /* display: flex; */
+    padding: 2rem;
+    display: none;
+    min-height: 60vh;
+}
+
+.home .slide.active {
+    display: flex;
+}
+
+.home .slide .content {
+    margin: auto;
+    text-align: center;
+}
+
+.home .slide .content span{
+    color: var(--black);
+    font-size: 3rem;
+    text-shadow: 0 0.5rem rgb(0 0 0 / 10%);
+    animation: fadeIn 0.2s linear backwards;
+}
+
+.home .slide .content h3{
+    text-transform: uppercase;  
+    font-size: 5rem; 
+    text-shadow: 0 0.5rem 1rem rgba(0 0 0 / 10%); 
+    font-weight: 600;
+    animation: fadeIn 0.2s linear  backwards .4s;
+}
+
+.home .slide .content .btn{
+    animation: fadeIn 0.2s linear backwards .6s;
+}
+
+.home #prev-slide,
+.home #next-slide{
+    width: 5rem;
+    height: 5rem;
+    line-height: 4.5rem;
+    border: 0.2rem solid #222;
+    font-size: 2.5rem;
+    color: var(--black);
+    background-color: var(--white);
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    bottom: 2rem;
+}
+
+.home #prev-slide{
+    right: 8rem;
+}
+.home #next-slide{
+    right: 2rem;
+}
+
+.home #prev-slide:hover, 
+.home #next-slide:hover {
+    color: var(--white);
+    background-color: var(--red);
+}
+
+/*==============================================================================
+                Category section starts
+===============================================================================*/
+
+a.box{
+    text-decoration: none;
+}
+
+a.box:hover{
+    text-decoration: none;
+}
+
+a.box h3:hover{
+    color: var(--red);
+}
+
+.box h3{
+    font-size: 1.7rem;
+    color: var(--black);
+    text-align: center;
+    text-transform: capitalize;
+    text-shadow: 0 0.5rem 1rem rgba(0 0 0 0/10%);
+}
+
+/*=============================================================================
+                            About section starts
+==============================================================================*/
+
+.about .image{
+    flex: 1 1 42rem;
+    padding-bottom: 5rem;
+    padding-right: 5rem;
+}
+
+.about .image img{
+    max-width: 100%;
+    box-shadow: 4rem 4rem 0 rgba(0 0 0 / 10%)
+}
+
+.about .content{
+    flex: 1 1 4.2rem;
+}
+
+.about .content .box-content {
+    background-color: var(--light);
+    padding: 3rem;
+}
+
+.about .content .box-content h3{
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    color: var(--black);
+    text-shadow: 0 0.5rem 1rem rgba(0 0 0 0/10%);
+}
+
+.about .content .box-content p{
+    font-size: 1.4rem;
+    line-height:2;
+    padding: 1rem 0;
+    color: var(--gray);
+}
+
+.about .content  .icon-container{
+    
+    margin-top: 2rem;
+}
+
+.about .content .icon-container .icon{ 
+    padding: 2rem 0;
+    text-align: center;
+    background-color: var(--light);
+} 
+
+.icon:last-child{
+    margin-top: 2rem;
+}
+
+.icon i{
+    font-size: 5rem;
+    color: var(--red);
+    margin-bottom: 0.625rem;
+}
+
+.icon p{
+    font-size: 1.4rem;
+    color: var(--gray);
+    text-transform: capitalize;
+}
+
+/*==============================================================================
+                            Shop Section starts
+===============================================================================*/
+
+#shop{
+    background-color: var(--light);
+    text-align: center;
+}
+
+.heading {
+    color: var(--black);
+    margin-bottom: 3rem;
+    font-size: 4rem;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.shop .box{
+    background-color: var(--white);
+    border: 0.2rem solid var(--black);
+    margin-bottom:2rem;
+    box-shadow: 0 0.5rem 1rem rgba(0 0 0 / 10%);
+}
+
+.shop .box:hover .image img{
+    transform: scale(1.1);
+}
+
+.shop .box:hover .image .Sicons{
+    transform: translateX(0rem);
+}
+
+.shop .box .image{
+    position: relative;
+    overflow: hidden;
+}
+
+.shop .box .image img{
+    height: 25rem;
+}
+
+
+.shop .box .image .Sicons{
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    transform: translateX(-10rem);
+}
+
+.shop .box .image .Sicons a{
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    line-height: 4.5rem;
+    color: var(--black);
+    font-size: 1.7rem;
+    border: 0.2rem solid var(--black);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.shop .box .image .Sicons a:hover{
+    color: var(--white);
+    background-color: var(--red);
+}
+
+.shop .box .content{
+    padding: 2rem;
+}
+
+.shop .box .content h3{
+    font-size: 2rem;
+    color: var(--black);
+    font-weight: normal;
+    padding-bottom: 0.5rem;
+}
+
+.shop .box .content .price{
+    font-size:2rem; ;
+    color: var(--red);
+    font-weight: bold;
+}
+
+.shop .box .content .price span{
+    color: var(--gray);
+    text-decoration: line-through;
+    font-size: 1.5rem;
+}
+
+/*============================================================================
+                            banner section starts
+=============================================================================*/
+
+.banner{
+    background: url('/images/banner-bg.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner .content{
+    background-color: var(--white);
+    max-width: 40rem;
+    text-align: center;
+    padding: 2rem;
+    margin: 10rem 0;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 10%);
+}
+
+.banner .content span{
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: var(--red);
+}
+
+.banner .content h3{
+    font-size: 3rem;
+    text-transform: capitalize;
+    color: var(--black);
+    padding-top: 1rem;
+}
+
+.banner .content p {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    color: var(--gray);
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+/*===================================================================================
+                                Gallery Section starts
+====================================================================================*/
+
+#gallery{
+    background-color: var(--white);
+    text-align: center;
+}
+
+.gallery .box_container:hover .content{
+    display: flex;
+}
+
+.gallery .box_container{
+    position: relative;
+    overflow: hidden;
+    height: 25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.gallery .box_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery .box_container .content{
+    background-color: rgba(255, 255, 255,0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 0.2rem solid #222;
+    flex-flow: column;
+}
+
+.gallery .box_container .content h3{
+    font-size: 2rem;
+    color: var(--black);
+    animation: fadeIn 0.2s linear backwards;
+}
+
+.gallery .box_container .content p{
+    font-size: 1.4rem;
+    color: var(--black);
+    padding: 1rem 0;
+    line-height: 2;
+    animation: fadeIn 0.2s linear backwards 0.4s;
+}
+
+.gallery .box_container .content .btn{
+    animation: fadeIn 0.2s linear backwards 0.6s;
+}
+
+/*============================================================================
+                        Blog Section starts
+=============================================================================*/
+
+#blog{
+    background-color: var(--light);
+}
+
+.blog h3{
+    text-align: center;
+}
+
+.blog .blog_box{
+    border: 0.2rem solid #222;
+    box-shadow: 0 0.5rem 1rem rgba(0 0 0 0/10%);
+    border-image: initial;
+}
+
+.blog .blog_box .image{
+    width: 100%;
+    height: 25rem;
+    border-bottom: 0.2rem solid rgb(34,34,34);
+    overflow: hidden;
+}
+
+.blog .blog_box .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog .blog_box:hover .image img{
+    transform: scale(1.1);
+    transition: 0.4s;
+}
+
+.blog .blog_box .blogContent{
+    position: relative;
+    padding: 2rem;
+}
+
+.blog .blog_box .blogContent .blogDate{
+    position: absolute;
+    top: -4rem;
+    right: 3rem;
+    width: 8rem;
+    height: 8rem;
+    border: 0.5rem solid #eee;
+    border-radius: 50%;
+    background-color: var(--red);
+    color: var(--white);
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.blog .blog_box .blogContent .blogDate h4{
+    font-size: 2.7rem;
+    line-height: 1;
+    color: var(--white);
+}
+
+.blog .blog_box .blogContent .blogDate span{
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--white);
+}
+
+.blog .blog_box .blogContent a.user{
+    display: block;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--gray);
+}
+
+.blog .blog_box .blogContent a.user i{
+    color: var(--red);
+    padding-right: .5rem;
+}
+
+.blog .blog_box .blogContent a.user:hover{
+    text-decoration: none;
+    color: var(--red);
+}
+
+.blog .blog_box .blogContent a.blogTitle{
+    font-size: 2rem;
+    color: var(--black);
+    text-transform: capitalize;
+}
+
+.blog .blog_box .blogContent a.blogTitle:hover{
+    text-decoration: none;
+    color: var(--red);
+}
+
+.blog .blog_box .blogContent p{
+    color: var(--gray);
+    line-height: 2;
+    font-size: 1.4rem;
+    padding: 1rem 0;
+}
+
+/*=========================================================================
+                            Contact section starts
+=========================================================================*/
+
+#contact{
+    background: var(--white);
+    background: url('/images/message-bg.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 3rem 2rem;
+}
+
+.message form{
+    margin: 2rem auto;
+    max-width: 40rem;
+    background-color: var(--white);
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0 0.5rem 1rem rgba(0 0 0 / 10%);
+}
+
+.message form h4{
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.message form input, .message form textarea{
+    width: 100%;
+    padding: 1.5rem 0;
+    margin: 0.5rem 0;
+    font-size: 1.4rem;
+    color: var(--gray);
+    outline: none;
+    border: none;
+    border-bottom: 0.1rem solid #222;
+}
+
+.message form textarea{
+    resize: none;
+}
+
+.message form input:hover, .message form textarea:hover{
+    border-bottom-color: #e60000;
+}
+
+/*===================================================================
+                        Service section starts
+====================================================================*/
+#service{
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.serviceBox{
+    text-align: center;
+    padding: 2rem;
+}
+
+.service img{
+    height: 10rem;
+}
+
+.service h4{
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.service p{
+    font-size: 1.4rem;
+    line-height: 2;
+    text-align: center;
+}
+
+/*===============================================================================
+
+================================================================================*/
+
+#footer{
+    padding: 3rem 9%;
+    background-color: var(--light);
+}
+
+.footer .top-footer-box ul{
+    list-style-type: none;
+}
+
+.footer .top-footer-box h3{
+    text-transform: capitalize;
+    text-shadow: 0 0.5rem 1rem rgb(0 0 0 / 10%);
+}
+
+.footer .top-footer-box  ul li{
+    display: block;
+    padding: 1rem 0;
+}
+
+.footer .top-footer-box ul li a{
+    text-decoration: none;
+    color: var(--gray);
+    font-size: 1.4rem;
+    text-transform: capitalize;
+}
+
+.footer .top-footer-box ul li a i{
+    color: var(--red);
+    padding-right: 0.5rem;
+} 
+
+.footer .top-footer-box ul li a:hover{
+    color: var(--red);
+}
+
+.footer .top-footer-box ul li a:hover i{
+    padding-right: 2rem;
+}
+
+.footer .top-footer-box .share{
+    margin-top: 2rem;
+}
+
+.footer .top-footer-box .share a i{
+    text-decoration: none;
+    color: rgba(34,34,34);
+    background: var(--white);
+    width: 4.5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 1.7rem;
+    text-align: center;
+    margin-right: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.footer .top-footer-box .share a i:hover{
+    color: var(--white);
+    background: var(--red);
+}
+
+
+.footer .top-footer-box p{
+    font-size: 1.3rem;
+    padding: 1rem 0;
+    text-transform: capitalize;
+    color: var(--gray);
+}
+
+.footer .top-footer-box form input[type ='email']{
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    margin: 1rem 0;
+    border: 0.2rem solid #222;
+    font-size:1.6rem;
+}
+
+.credit-footer{
+    padding: 1rem;
+    padding-top: 3rem;
+    margin-top: 3rem;
+    border-top: 0.2rem solid var(--gray);
+    text-align: center;
+}
+
+.credit-footer .credit-content h4{
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    color: var(--gray);
+}
+
+.credit-footer .credit-content span{
+    color: var(--red);
+    font-size: 1.5rem;
+    border-right: 0.2rem solid #666;
+    padding-right: 0.5rem;
+    margin-right: 0.5rem;
+}
